@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Keerthi 💗</title>
+
+<style>
+*{box-sizing:border-box;}
+
+html,body{
+  margin:0;
+  min-height:100%;
+  font-family:Georgia,serif;
+}
+
+body{
+  color:#fff;
+  background:
+    linear-gradient(135deg,rgba(18,7,24,.72),rgba(42,16,41,.65) 55%,rgba(11,16,36,.75)),
+    url("photos/bg.jpg") center/cover no-repeat fixed,
+    #120718;
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.45;
+  background-image:
+    radial-gradient(circle,#fff 1px,transparent 1px),
+    radial-gradient(circle,#ffdcec 1px,transparent 1px);
+  background-size:70px 70px,110px 110px;
+  background-position:10px 20px,40px 60px;
+}
+
+.page{
+  min-height:100vh;
+  display:none;
+  place-items:center;
+  padding:24px;
+  position:relative;
+}
+
+.page.active{
+  display:grid;
+  animation:in .7s ease;
+}
+
+.card{
+  width:min(92vw,680px);
+  padding:42px 28px;
+  text-align:center;
+  border:1px solid #ffffff30;
+  border-radius:28px;
+  background:#140819b8;
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 80px #0008;
+}
+
+.wide{width:min(94vw,820px);}
+
+.moon{font-size:64px;animation:float 3s infinite;}
+.cake{font-size:70px;animation:bounce 1.5s infinite;}
+
+.small{color:#f4cfe4;letter-spacing:1px;}
+
+.date{
+  font-size:21px;
+  letter-spacing:6px;
+  color:#ffd6ee;
+  margin:24px 0;
+}
+
+h1{
+  font-size:clamp(34px,8vw,58px);
+  line-height:1.1;
+  margin:18px 0;
+  text-shadow:0 0 25px #ff82c873;
+}
+
+h2{font-size:clamp(28px,6vw,44px);}
+
+button{
+  border:0;
+  border-radius:999px;
+  padding:14px 25px;
+  margin-top:25px;
+  font-size:16px;
+  font-weight:bold;
+  color:#381329;
+  background:linear-gradient(135deg,#ffd4eb,#e9b6ff);
+  cursor:pointer;
+  box-shadow:0 10px 30px #ffa0dc40;
+}
+
+button:hover{transform:translateY(-2px);}
+
+video{
+  width:100%;
+  max-height:65vh;
+  border-radius:18px;
+  background:#08050a;
+}
+
+.letter{text-align:left;}
+.letter h2{text-align:center;}
+
+#letterText{
+  white-space:pre-line;
+  color:#ffeaf5;
+  font-size:17px;
+  line-height:2;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:25px;
+}
+
+.memory{
+  margin:0;
+  overflow:hidden;
+  border-radius:22px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:0 14px 35px rgba(0,0,0,.28);
+  transform:rotate(-1deg);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.memory:nth-child(even){transform:rotate(1deg);}
+
+.memory:hover{
+  transform:translateY(-6px) rotate(0deg);
+  box-shadow:0 20px 45px rgba(255,150,210,.25);
+}
+
+.memory img{
+  display:block;
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+.memory figcaption{
+  padding:13px 10px;
+  color:#ffe5f2;
+  font-size:15px;
+}
+
+.final-message{
+  font-size:19px;
+  line-height:1.8;
+  color:#f8ddea;
+}
+
+.hearts{
+  font-size:28px;
+  letter-spacing:10px;
+  color:#ffb5dc;
+  margin-top:25px;
+}
+
+@keyframes in{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:none;}
+}
+
+@keyframes float{50%{transform:translateY(-12px);}}
+@keyframes bounce{50%{transform:translateY(-10px);}}
+
+@media(max-width:600px){
+  .card{padding:32px 18px;}
+  .gallery{grid-template-columns:1fr;}
+  #letterText{font-size:16px;}
+  .memory img{height:360px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="card">
+    <div class="moon">🌙</div>
+    <p class="small">A little surprise is waiting for you...</p>
+    <h1>Hey my girl 👻<br>Mine Real Happiness 😘👻</h1>
+    <p class="date">28 • 11 • 2006</p>
+    <button onclick="go('birthday')">Open Your Surprise 🎁</button>
+  </div>
+</section>
+
+<!-- BIRTHDAY -->
+<section id="birthday" class="page">
+  <div class="card">
+    <div class="cake">🎂</div>
+    <p class="small">Today is all about you...</p>
+    <h1>Happiest Birthday<br>Keerthi 🥳🫂🫀</h1>
+    <p>Happy birthday mine girl 😘👻</p>
+    <button onclick="go('video')">Next 💗</button>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video" class="page">
+  <div class="card wide">
+    <h2>🎥 A Little Video For You</h2>
+    <video controls playsinline preload="metadata">
+      <source src="video/video.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+    <button onclick="go('letter')">Read My Letter 💌</button>
+  </div>
+</section>
+
+<!-- LETTER -->
+<section id="letter" class="page">
+  <div class="card wide letter">
+    <h2>💌 For My Mine Girl</h2>
+    <div id="letterText"></div>
+    <button onclick="go('memories')">Our Memories 📸</button>
+  </div>
+</section>
+
+<!-- MEMORIES -->
+<section id="memories" class="page">
+  <div class="card wide">
+    <h2>📸 Little Memories</h2>
+
+    <div class="gallery">
+
+      <figure class="memory">
+        <img src="photos/photo1.jpg" alt="Memory 1">
+        <figcaption>Our little memory 🫂</figcaption>
+      </figure>
+
+      <figure class="memory">
+        <img src="photos/photo2.jpg" alt="Memory 2">
+        <figcaption>Us, always 💗</figcaption>
+      </figure>
+
+      <figure class="memory">
+        <img src="photos/photo3.jpg" alt="Memory 3">
+        <figcaption>My favourite smile 😘</figcaption>
+      </figure>
+
+      <figure class="memory">
+        <img src="photos/photo4.jpg" alt="Memory 4">
+        <figcaption>One more beautiful memory ✨</figcaption>
+      </figure>
+
+      <figure class="memory">
+        <img src="photos/photo5.jpg" alt="Memory 5">
+        <figcaption>Mine real happiness 🫀</figcaption>
+      </figure>
+
+      <figure class="memory">
+        <img src="photos/photo6.jpg" alt="Memory 6">
+        <figcaption>my life line memory with u 💗</figcaption>
+      </figure>
+
+    </div>
+
+    <button onclick="go('final')">One More Surprise 🎁</button>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section id="final" class="page">
+  <div class="card">
+    <div class="moon">🌙</div>
+    <h2>To My Real Happiness 🫀</h2>
+    <p class="final-message">
+      You are one of the most precious gifts life gave me.<br>
+      No matter how many misunderstandings come our way,
+      you will always have a special place in my heart. 🫂
+    </p>
+    <h1>Miss you lots diiii 😩🫀</h1>
+    <p>Love you lots diiii 💗</p>
+    <div class="hearts">♡ ♥ ♡ ♥ ♡</div>
+  </div>
+</section>
+
+<script>
+const letter = `Enoda life-la enaku kedacha oru periya gift na, athu nee mattum dha 🥺🫀
+
+Unna tholachika na virumba matten.
+
+Athey maari, ipo 1 month-a nammakulla orey sandai, misunderstanding... Unna na purinjika matikuren, unaya rombave hurt pannuren. Ana ithu ethuvum na venum nu seila ma. Enna nambu 😫😭
+
+Athuvum intha sandai-ku apram enaku romba bayama agiruchu... Nee na pesuratha disturbance-a eduthukuviya? Na pesalama, pesakoodatha? Apdinu enake therila.
+
+Ena veruthuruviya nu enaku romba bayam. 😭
+
+Athuvum nee enoda pakathula varumbothu enoda heartbeat increase aaguthu... Una romba miss pannuren.
+
+Unoda voice-a romba romba miss pannuren.
+
+Kooda irukkumbothu unoda arumai enaku therila... Nee ena vittu pona nodila dha una na romba miss pandren. 😩
+
+Apdiye paithiyam pudikuthu... Nee illatha oru life-la daily-um unoda voice message, video ethayachi kettu, naney thaniya sirikiren. 😭
+
+I miss you lots di, chella kutty.
+
+Una pakkanum, una hug pannanum, unakita enoda manasula irukkura ellame sollanum, aluganum... Una avalo miss pannuren. 😩😭
+
+Nee dha enaku yellameyy. 😩😭
+
+Nee dha enoda uyiree 🫀
+
+Vera yaarayum na intha maari sonnathe illa... Nee mattum dha. Nee mattum dha. Vera yarum illa. 🥺
+
+Na ellathaiyum share pannuven... Ana una enala yarukum share pannamaten.
+
+You are mine 😩🫀
+
+Miss you lots diiii... and love you lots diiii 😩🫀😭`;
+
+let typed = false;
+
+function go(id){
+  document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+
+  // stop video when leaving the video page
+  if(id !== 'video'){
+    const v = document.querySelector('video');
+    if(v) v.pause();
+  }
+
+  // type the letter once
+  if(id === 'letter' && !typed){
+    typed = true;
+    let i = 0;
+    const el = document.getElementById('letterText');
+    (function typeLetter(){
+      if(i < letter.length){
+        el.textContent += letter[i++];
+        setTimeout(typeLetter, 8);
+      }
+    })();
+  }
+}
+</script>
+
+</body>
+</html>
+
+
